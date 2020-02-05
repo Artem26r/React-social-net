@@ -1,0 +1,38 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+
+.dialogs_items {
+    padding: 1rem;
+    background: #2e3d4e;
+    margin: 1rem;
+    border-radius: .5rem;
+    color: #bdbdbd;
+    font-weight: bold;
+    line-height: 3rem;
+}
+.dialogs_items a {
+    text-decoration: none;
+    color: #bdbdbd;
+}
+
+.dialogs_items a.active_link {
+    color: white;
+}
+
+.dialog {
+
+}
+
+.messages {
+    padding: 1rem;
+    background: #2e3d4e;
+    margin: 1rem 1rem 1rem 0rem;
+    border-radius: .5rem;
+    line-height: 3rem;
+}
+
+.message {
+
+}

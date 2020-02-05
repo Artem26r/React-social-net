@@ -8,8 +8,7 @@ const Post = (props) => {
             <img src='https://www.sunhome.ru/i/wallpapers/183/malenkii-svidetel.orig.jpg' alt=''/>
             { props.message }
             <div>
-                <span>Like</span>
-                <span>Dislike</span>
+                <span>Like {props.likeCount} </span>
             </div>
         </div>
     )

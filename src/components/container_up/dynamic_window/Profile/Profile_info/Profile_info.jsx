@@ -1,18 +1,20 @@
 import React from 'react';
-import classes from './Profile.module.css';
-import MyPosts from "./MyPosts/MyPosts";
+import classes from './Profile_info.module.css';
 
-const Profile = () => {
-    return  (
+
+const Profile_info = () => {
+    return (
         <div className={classes.content}>
+
             <div>
                 <img src='https://img1.goodfon.com/original/3000x2208/7/48/art-tsujiki-lyudi-nebo-zvezdy.jpg' alt=''/>
             </div>
-            <div>avatar disc</div>
-            My Posts
-            <MyPosts/>
+            <div className={classes.discription_block}>
+                avatar + disc
+            </div>
         </div>
     )
 }
 
-export default Profile;
+export default Profile_info;
+

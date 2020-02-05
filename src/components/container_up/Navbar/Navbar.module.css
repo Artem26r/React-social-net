@@ -1,0 +1,19 @@
+.nav {
+    background-color: #2e3d4e;
+    border-bottom-right-radius: 1rem;
+    border-top-right-radius: 1rem;
+    font-weight: bold;
+    grid-area: nav;
+    line-height: 3rem;
+    margin: 1rem 0;
+    padding: 1rem 1rem 1rem 2rem;
+}
+.item a {
+    color: #bdbdbd;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.item a.active_link {
+    color: white;
+}

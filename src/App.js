@@ -1,20 +1,16 @@
 import React from 'react';
 import './App.css';
-import Header from './components/Header/Header';
-import Navbar from './components/Navbar/Navbar';
-import Profile from './components/Profile/Profile';
+import Container_up from "./components/container_up/Container_up";
+import {BrowserRouter} from 'react-router-dom'
 
 
 const App = () => {
   return (
-      <div className='container'>
-          <div className='app_wrapper'>
-            <Header/>
-            <Navbar/>
-            <Profile/>
-            Start New Dao
-          </div>
+      <BrowserRouter>
+      <div className='full_content'>
+        <Container_up />
       </div>
+      </BrowserRouter>
   )
 }
 
