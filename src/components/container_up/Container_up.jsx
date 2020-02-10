@@ -16,7 +16,7 @@ const Container_up = (props) => {
       <div className='container'>
           <div className={classes.container_up}>
             <Header/>
-            <Navbar/>
+            <Navbar state={props.state.dialogsPage}/>
             <div className={classes.content}>
                 <Route path='/profile' render={ () => <Profile state={props.state.profilePage} /> } />
                 <Route path='/dialogs' render={ () => <Dialogs state={props.state.dialogsPage} /> } />
