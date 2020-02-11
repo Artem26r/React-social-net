@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './Container_up.module.css';
+import classes from './ContainerUp.module.css';
 import {Route} from 'react-router-dom';
 import Header from "./Header/Header";
 import Navbar from './Navbar/Navbar';
@@ -10,7 +10,7 @@ import Music from "./dynamic_window/Music/Music";
 import Setting from "./dynamic_window/Setting/Setting";
 
 
-const Container_up = (props) => {
+const ContainerUp = (props) => {
 
     return (
       <div className='container'>
@@ -18,7 +18,7 @@ const Container_up = (props) => {
             <Header/>
             <Navbar state={props.state.dialogsPage}/>
             <div className={classes.content}>
-                <Route path='/profile' render={ () => <Profile state={props.state.profilePage} /> } />
+                <Route path='/profile' render={ () => <Profile state={props.state.profilePage} addPost={props.addPost}/> } />
                 <Route path='/dialogs' render={ () => <Dialogs state={props.state.dialogsPage} /> } />
                 <Route path='/news' component={News} />
                 <Route path='/music' component={Music} />
@@ -29,4 +29,4 @@ const Container_up = (props) => {
   )
 }
 
-export default Container_up;
+export default ContainerUp;

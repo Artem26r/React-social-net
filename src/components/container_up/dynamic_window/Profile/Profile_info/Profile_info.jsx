@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './Profile_info.module.css';
 
 
-const Profile_info = () => {
+const ProfileInfo = () => {
     return (
         <div className={classes.content}>
 
@@ -16,5 +16,5 @@ const Profile_info = () => {
     )
 }
 
-export default Profile_info;
+export default ProfileInfo;
 
