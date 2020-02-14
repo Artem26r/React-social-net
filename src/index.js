@@ -1,4 +1,3 @@
-import React from 'react';
 import './index.css';
 import {rerenderEntriTree} from './render'
 import * as serviceWorker from './serviceWorker';
