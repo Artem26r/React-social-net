@@ -7,7 +7,7 @@ import {BrowserRouter} from 'react-router-dom'
 const App = (props) => {
     return (
         <BrowserRouter>
-            <div className='full_content'><ContainerUp state={props.state} addPost={props.addPost}/></div>
+            <div className='full_content'><ContainerUp state={props.state} addPost={props.addPost} updateNewPostText={props.updateNewPostText}/></div>
         </BrowserRouter>
     )
 }
