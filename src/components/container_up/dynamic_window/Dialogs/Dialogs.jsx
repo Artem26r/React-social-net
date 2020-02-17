@@ -2,11 +2,16 @@ import React from "react";
 import classes from "./Dialogs.module.css"
 import Message from "./Message/Message";
 import DialogItem from "./DialogItem/DialogItem";
+import {CustomInput, CustomButton} from "../../../components_element/componentsElement";
+
+
+
 
 const Dialogs = (props) => {
 
-    let messageElements = props.state.messages.map( (message, id) => <Message key={id} message={message.message}/>)
-    let dialogsElements = props.state.dialogs.map( (dialog, id) => <DialogItem key={id} name={dialog.name} id={dialog.id} images={dialog.images}/>)
+    let messageElements = props.state.messages.map((message, id) => <Message key={id} message={message.message}/>)
+    let dialogsElements = props.state.dialogs.map((dialog, id) => <DialogItem key={id} name={dialog.name} id={dialog.id}
+                                                                              images={dialog.images}/>)
 
     let newMessageElement = React.createRef();
 
@@ -26,10 +31,10 @@ const Dialogs = (props) => {
                     {messageElements}
                 </div>
                 <div>
-                    <textarea ref={newMessageElement}></textarea>
+                    <CustomInput ref={newMessageElement}/>
                 </div>
                 <div>
-                    <button onClick={addMessage}>send</button>
+                    <CustomButton onClick={addMessage}>Send</CustomButton>
                 </div>
             </div>
         </div>
