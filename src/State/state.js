@@ -45,7 +45,7 @@ export const updateNewPostText = (newText) => {
 }
 
 export const subscribe = (observer) => {
-    rerenderEntriTree = observer; //observer // патерн //
+    rerenderEntriTree = observer;
 }
 
 export default state;
