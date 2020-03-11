@@ -3,21 +3,27 @@ import classes from "./Dialogs.module.css"
 import Message from "./Message/Message";
 import DialogItem from "./DialogItem/DialogItem";
 import {CustomInput, CustomButton} from "../../../components_element/componentsElement";
+import {sendMessageCreator, updateNewMessageBodyCreator} from "../../../../State/state";
 
 
 
 
 const Dialogs = (props) => {
 
-    let messageElements = props.state.messages.map((message, id) => <Message key={id} message={message.message}/>)
-    let dialogsElements = props.state.dialogs.map((dialog, id) => <DialogItem key={id} name={dialog.name} id={dialog.id}
+    let state = props.store.getState().dialogsPage;
+
+    let messageElements = state.messages.map((message, id) => <Message key={id} message={message.message}/>)
+    let dialogsElements = state.dialogs.map((dialog, id) => <DialogItem key={id} name={dialog.name} id={dialog.id}
                                                                               images={dialog.images}/>)
 
-    let newMessageElement = React.createRef();
+    let newMessageBody = state.newMessageBody;
+    let onSendMessageClick = () => {
+        props.store.dispatch(sendMessageCreator())
+    }
 
-    let addMessage = () => {
-        let text = newMessageElement.current.value;
-        alert(text);
+    let onNewMessageChange = (event) => {
+        let body = event.target.value;
+        props.store.dispatch(updateNewMessageBodyCreator(body))
     }
 
     return (
@@ -31,10 +37,12 @@ const Dialogs = (props) => {
                     {messageElements}
                 </div>
                 <div>
-                    <CustomInput ref={newMessageElement}/>
+                    <CustomInput value={newMessageBody}
+                                 placeholder='Message'
+                                 onChange={onNewMessageChange}/>
                 </div>
                 <div>
-                    <CustomButton onClick={addMessage}>Send</CustomButton>
+                    <CustomButton onClick={onSendMessageClick}>Send</CustomButton>
                 </div>
             </div>
         </div>
