@@ -1,6 +1,6 @@
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import store from './State/state'
+import store from './State/redux-store'
 
 
 import React from 'react';
@@ -16,7 +16,10 @@ export let rerenderEntriTree = (state) => {
 
 rerenderEntriTree(store.getState());
 
-store.subscribe(rerenderEntriTree);
+store.subscribe(() => {
+    let state = store.getState();
+    rerenderEntriTree(state);
+});
 
 
 // If you want your app to work offline and load faster, you can change

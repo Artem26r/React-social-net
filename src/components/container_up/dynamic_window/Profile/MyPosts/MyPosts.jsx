@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './MyPosts.module.css';
 import Post from "./Post/Post";
 import {CustomButton, CustomInput} from "../../../../components_element/componentsElement";
-import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../../../State/state";
+import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../../../State/profile-reducer";
 
 
 

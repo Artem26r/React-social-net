@@ -3,7 +3,8 @@ import classes from "./Dialogs.module.css"
 import Message from "./Message/Message";
 import DialogItem from "./DialogItem/DialogItem";
 import {CustomInput, CustomButton} from "../../../components_element/componentsElement";
-import {sendMessageCreator, updateNewMessageBodyCreator} from "../../../../State/state";
+import {sendMessageCreator, updateNewMessageBodyCreator} from "../../../../State/dialogs-reducer";
+
 
 
 
