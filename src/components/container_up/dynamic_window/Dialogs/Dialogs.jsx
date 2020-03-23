@@ -3,7 +3,6 @@ import classes from "./Dialogs.module.css"
 import Message from "./Message/Message";
 import DialogItem from "./DialogItem/DialogItem";
 import {CustomInput, CustomButton} from "../../../components_element/componentsElement";
-import {sendMessageCreator, updateNewMessageBodyCreator} from "../../../../State/dialogs-reducer";
 
 
 
@@ -11,7 +10,7 @@ import {sendMessageCreator, updateNewMessageBodyCreator} from "../../../../State
 
 const Dialogs = (props) => {
 
-    let state = props.store.getState().dialogsPage;
+    let state = props.dialogsPage;
 
     let messageElements = state.messages.map((message, id) => <Message key={id} message={message.message}/>)
     let dialogsElements = state.dialogs.map((dialog, id) => <DialogItem key={id} name={dialog.name} id={dialog.id}
@@ -19,12 +18,12 @@ const Dialogs = (props) => {
 
     let newMessageBody = state.newMessageBody;
     let onSendMessageClick = () => {
-        props.store.dispatch(sendMessageCreator())
+        props.sendMessage();
     }
 
     let onNewMessageChange = (event) => {
         let body = event.target.value;
-        props.store.dispatch(updateNewMessageBodyCreator(body))
+        props.updateNewMessageBody(body)
     }
 
     return (

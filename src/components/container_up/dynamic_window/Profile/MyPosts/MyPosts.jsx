@@ -2,7 +2,6 @@ import React from 'react';
 import classes from './MyPosts.module.css';
 import Post from "./Post/Post";
 import {CustomButton, CustomInput} from "../../../../components_element/componentsElement";
-import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../../../State/profile-reducer";
 
 
 
@@ -12,15 +11,13 @@ const MyPosts = (props) => {
 
     let newPostElement = React.createRef();
 
-    let addPost = () => {
-        props.dispatch(addPostActionCreator());
+    let onAddPost = () => {
+        props.addPost();
     }
 
     let onPostChange = () => {
         let text = newPostElement.current.value;
-        //let action = {type: 'UPDATE-NEW-POST-TEXT', newText: text};
-        let action = updateNewPostTextActionCreator(text);
-        props.dispatch(action);
+        props.updateNewPostText(text);
     }
 
     return (
@@ -31,7 +28,7 @@ const MyPosts = (props) => {
                     <CustomInput onChange={onPostChange} ref={newPostElement} value={props.newPostText}/>
                 </div>
                 <div>
-                    <CustomButton onClick={addPost}>Add post</CustomButton>
+                    <CustomButton onClick={onAddPost}>Add post</CustomButton>
                 </div>
             </div>
             <div className={classes.posts}>

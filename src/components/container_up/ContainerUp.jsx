@@ -2,12 +2,12 @@ import React from 'react';
 import classes from './ContainerUp.module.css';
 import {Route} from 'react-router-dom';
 import Header from "./Header/Header";
-import Navbar from './Navbar/Navbar';
-import Dialogs from "./dynamic_window/Dialogs/Dialogs";
 import Profile from './dynamic_window/Profile/Profile';
 import News from "./dynamic_window/News/News";
 import Music from "./dynamic_window/Music/Music";
 import Setting from "./dynamic_window/Setting/Setting";
+import DialogsContainer from "./dynamic_window/Dialogs/DialogsContainer";
+import NavbarContainer from "./Navbar/NavbarContainer";
 
 
 const ContainerUp = (props) => {
@@ -16,10 +16,10 @@ const ContainerUp = (props) => {
       <div className='container'>
           <div className={classes.container_up}>
             <Header/>
-            <Navbar state={props.state.dialogsPage}/>
+            <NavbarContainer />
             <div className={classes.content}>
-                <Route path='/profile' render={ () => <Profile profilePage={props.state.profilePage} dispatch={props.dispatch}/> } />
-                <Route path='/dialogs' render={ () => <Dialogs store={props.store} /> } />
+                <Route path='/profile' render={ () => <Profile /> } />
+                <Route path='/dialogs' render={ () => <DialogsContainer /> } />
                 <Route path='/news' component={News} />
                 <Route path='/music' component={Music} />
                 <Route path='/settings' component={Setting} />
