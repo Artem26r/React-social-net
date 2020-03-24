@@ -1,25 +1,17 @@
 import React from 'react';
 import Navbar from "./Navbar";
-import StoreContext from "../../../StoreContext";
-
-const NavbarContainer = (props) => {
+import {connect} from "react-redux";
 
 
 
-    return  (
 
-        <StoreContext>
-            {
-                (store) => {
-                    let state = store.getState();
-                    return <Navbar dialogs={state.dialogsPage.dialogs}/>
-                }
-            }
-        </StoreContext>
-
-    )
-
-
+let mapStateToProps = (state) => {
+    return {
+        dialogs: state.dialogsPage.dialogs
+    }
 }
+
+
+const NavbarContainer = connect(mapStateToProps)(Navbar);
 
 export default NavbarContainer;
