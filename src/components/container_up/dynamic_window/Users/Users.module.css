@@ -1,0 +1,5 @@
+.content img {
+    width: 30%;
+    height: 20vh;
+    object-fit: cover;
+}

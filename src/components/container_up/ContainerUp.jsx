@@ -8,7 +8,7 @@ import Music from "./dynamic_window/Music/Music";
 import Setting from "./dynamic_window/Setting/Setting";
 import DialogsContainer from "./dynamic_window/Dialogs/DialogsContainer";
 import NavbarContainer from "./Navbar/NavbarContainer";
-
+import UsersContainer from "./dynamic_window/Users/UsersContainer";
 
 const ContainerUp = (props) => {
 
@@ -23,6 +23,8 @@ const ContainerUp = (props) => {
                 <Route path='/news' component={News} />
                 <Route path='/music' component={Music} />
                 <Route path='/settings' component={Setting} />
+                <Route path='/users'
+                       render={ () => <UsersContainer /> } />
             </div>
           </div>
       </div>
