@@ -3,3 +3,7 @@
     height: 20vh;
     object-fit: cover;
 }
+
+.selectedPage {
+    font-weight: bold;
+}
