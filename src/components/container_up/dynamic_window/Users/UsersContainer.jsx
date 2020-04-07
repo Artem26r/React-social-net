@@ -60,9 +60,7 @@ let mapStateToProps = (state) => {
     }
 }
 
-/*
-
-let mapDispatchToProps = (dispatch) => {
+/*let mapDispatchToProps = (dispatch) => {
     return {
         follow: (userId) => {
             dispatch(followAC(userId))
@@ -83,9 +81,8 @@ let mapDispatchToProps = (dispatch) => {
             dispatch(toggleIsFetchingAC(isFetching))
         }
     }
-}
+}*/
 
-*/
 
 export default connect(mapStateToProps, {
     follow,
