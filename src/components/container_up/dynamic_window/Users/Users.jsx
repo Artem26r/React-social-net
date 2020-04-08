@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./Users.module.css";
 import userPhoto from "../../../../assets/images/NoPhoto.jpg";
 import {CustomButton} from "../../../components_element/componentsElement";
+import {NavLink} from "react-router-dom";
 
 let Users = (props) => {
 
@@ -25,9 +26,11 @@ let Users = (props) => {
             {
                 props.users.map( u => <div key={u.id}>
                     <div>
-                        <div className={classes.content}>
-                            <img src={u.photos.small != null ? u.photos.small : userPhoto} alt=""/>
-                        </div>
+                        <NavLink to={'/profile' + u.id}>
+                            <div className={classes.content}>
+                                <img src={u.photos.small != null ? u.photos.small : userPhoto} alt=""/>
+                            </div>
+                        </NavLink>
                         <div>
                             { u.followed
                                 ? <CustomButton onClick={ () => {props.unfollow(u.id)} }>unfollow</CustomButton>
@@ -42,8 +45,8 @@ let Users = (props) => {
                             <div>{u.status}</div>
                         </div>
                         <div>
-                            <dib>{'u.location.country'}</dib>
-                            <dib>{'u.location.city'}</dib>
+                            <div>{'u.location.country'}</div>
+                            <div>{'u.location.city'}</div>
                         </div>
                     </div>
                 </div>)
