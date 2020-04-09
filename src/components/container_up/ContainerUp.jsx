@@ -13,22 +13,22 @@ import ProfileContainer from "./dynamic_window/Profile/ProfileContainer";
 const ContainerUp = (props) => {
 
     return (
-      <div className='container'>
-          <div className={classes.container_up}>
-            <Header/>
-            <NavbarContainer />
-            <div className={classes.content}>
-                <Route path='/profile' render={ () => <ProfileContainer /> } />
-                <Route path='/dialogs' render={ () => <DialogsContainer /> } />
-                <Route path='/news' component={News} />
-                <Route path='/music' component={Music} />
-                <Route path='/settings' component={Setting} />
-                <Route path='/users'
-                       render={ () => <UsersContainer /> } />
+        <div className='container'>
+            <div className={classes.container_up}>
+                <Header/>
+                <NavbarContainer/>
+                <div className={classes.content}>
+                    <Route path='/profile:userId?' render={() => <ProfileContainer/>}/>
+                    <Route path='/dialogs' render={() => <DialogsContainer/>}/>
+                    <Route path='/news' component={News}/>
+                    <Route path='/music' component={Music}/>
+                    <Route path='/settings' component={Setting}/>
+                    <Route path='/users'
+                           render={() => <UsersContainer/>}/>
+                </div>
             </div>
-          </div>
-      </div>
-  )
+        </div>
+    )
 }
 
 export default ContainerUp;
