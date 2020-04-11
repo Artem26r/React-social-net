@@ -6,3 +6,11 @@
     width: 5rem;
     padding: 1rem;
 }
+.logBlock {
+    float: right;
+    padding: 1rem;
+}
+.logBlock a {
+    color: white;
+    text-decoration: none;
+}
